@@ -1,0 +1,59 @@
+
+      <section id="cuerpo" ng-controller="indexCtrl" ng-init="initindex()">
+        <form >
+          <div class="">
+            <input type="text"  class="ui segment" ng-model="valor" value="">
+            <button  class="btn btn-primary" ng-click="post(valor)">Guardar </button>
+
+          </div>
+        </form>
+        <table>
+          <tr>
+            <td>Registros</td>
+          </tr>
+          <tr ng-hide="ocultar_borrado[$index]"  ng-repeat="item in repeat_get">
+            <td>{[item.letras]}</td>
+            <td>  <button type="button"  class="btn btn-info"  data-toggle="modal" ng-click ="get_modal(item)"  data-target="#myModal">Editar</button></td>
+            <td>  <button type="button"  class="btn btn-danger"   ng-click ="eliminar($index)"  >Eliminar</button></td>
+          </tr>
+        </table>
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+
+    <div  class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4  class="modal-title">{[modal_inf]}</h4>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td>Datos </td>
+            </tr>
+            <tr >
+              <td><input type="text"   ng-model="datos_modal.letras" value="datos_modal.letras"></td>
+            </tr>
+          </table>
+
+        </div>
+        <div  class="modal-footer">
+          <button type="button" class="btn btn-info" ng-click="actualizar(datos_modal)" data-dismiss="modal">Actualizar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </div>
+    </div>
+
+
+</div>
+
+      </section>
