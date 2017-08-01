@@ -66,8 +66,8 @@ var main = require('./models/main');
 
 main.start()
 .then(function(){
-  app.start = app.listen(3040, function (){
-    console.log("Escuchando en el puerto 3040");
+  app.start = app.listen(5000, function (){
+    console.log("Escuchando en el puerto 5000");
    });
   });
 
